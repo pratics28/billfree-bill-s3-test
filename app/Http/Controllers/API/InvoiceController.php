@@ -83,4 +83,11 @@ class InvoiceController extends Controller
         return $pdf->stream('invoice.pdf');
     }
 
+    public function index(){
+        $invoices = Invoice::with('lineItems', 'fromUser', 'toUser')->get();
+        return view('invoice-list',[
+            'invoices' => $invoices
+        ]);
+    }
+
 }

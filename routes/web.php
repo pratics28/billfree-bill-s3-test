@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('invoices/{id}', 'App\Http\Controllers\API\InvoiceController@generateInvoice');
+Route::get('invoices', 'App\Http\Controllers\API\InvoiceController@index');
